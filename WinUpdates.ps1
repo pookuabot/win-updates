@@ -20,7 +20,7 @@ $Searcher.Search("IsInstalled=1").Updates | Select-Object Title | Out-File $upda
 # missing error that sendEmail.exe gives
 # It wants a -m "message" but we are sending
 # the file as the message instead
-cat $update_list >> $update_now
+Get-Content $update_list | Set-Content $update_now
 
 ##########################
 ### Email Notification ###
