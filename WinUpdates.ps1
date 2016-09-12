@@ -1,7 +1,6 @@
 # Update Variables
 $update_dir  = "C:\updates"
-$update_list = "C:\updates\Updates.txt"
-$update_now  = "C:\updates\WinUpdates.html"
+$update_list = "C:\updates\WinUpdates.txt"
 
 #########################
 ### Check for updates ###
@@ -24,7 +23,7 @@ $Searcher.Search("IsInstalled=1").Updates | Select-Object Title | Out-File $upda
 $From = "server@winsvr01.pookuabot.local"
 $To = "serverteam@pookuabot.local"
 $Subject = "Windows Update Notification"
-$Body = Get-Content $update_now | Out-String
+$Body = Get-Content $update_list | Out-String
 $SMTPServer = "smtp.pookuabot.local"
 Send-MailMessage -From $From -To $To -Subject $Subject `
 -Body $Body -SmtpServer $SMTPServer
