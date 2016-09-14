@@ -33,7 +33,7 @@ Get-Content $update_list | Set-Content $update_now
 ##########################
 
 # Emails the list of updates that need installed
-mail -s smtp.ctinetworks.com -t boxlogger@pa.net -f noc@pa.net -b ntdomain0.ctinetworks.com -u "Windows Update Notification" -o "message-file=$update_now"
+mail -s smtp.myserver.com -t pookuabot@myserver.com -f admin@winsvr01.myserver.com -b winsvr01.myserver.com -u "Windows Update Notification" -o "message-file=$updates_now"
 
 ################################
 ### Remove Updates Directory ###
